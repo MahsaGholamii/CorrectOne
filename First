@@ -1,0 +1,97 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("Registration Of User Information");
+        while (true)
+        {
+            Console.WriteLine("Please enter your name");
+            string FirstName = Console.ReadLine();
+            if (FirstName == null)
+            {
+                Console.WriteLine("Username cannot be empty");
+
+            }
+            else
+            {
+                break;
+
+            }
+
+
+        }
+        while (true)
+        {
+            Console.WriteLine("Please enter your last name ");
+            String lastName = Console.ReadLine();
+            if (lastName == null)
+            {
+                Console.WriteLine("Surname cannot be empty");
+
+            }
+            else
+            {
+                break;
+            }
+        }
+        while (true)
+        {
+            {
+                Console.WriteLine("Please enter your Age");
+            }
+            int age;
+            int Age = Convert.ToInt32(Console.ReadLine());
+
+            if (Age == null)
+            {
+                Console.WriteLine("Age cannot be empty");
+
+            }
+            else if (Age <= 0)
+            {
+                Console.WriteLine("Please Insert Your Age Corrently");
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        while (true)
+        {
+            Console.WriteLine("Please enter your MobileNumber");
+
+            
+            string MobileNumber = Console.ReadLine();
+
+            if (MobileNumber == null)
+            {
+                Console.WriteLine("Mobile number cannot be empty. Please try again.");
+
+            }
+
+            else if (!Regex.IsMatch(MobileNumber, @"^0[0-9]{10}$"))
+            {
+                Console.WriteLine("Mobile number must start with '0' and be exactly 11 digits. Please try again.");
+                continue;
+            }
+            else
+            {
+                Console.WriteLine($"A valid mobile number has been entered: {MobileNumber}");
+                break;
+            }
+
+            Console.ReadKey();
+
+
+        }
+
+    }
+
+
+}
